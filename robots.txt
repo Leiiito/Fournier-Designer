@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://fournier-designer.github.io/sitemap.xml
+Sitemap: https://leiiito.github.io/Fournier-Designer/sitemap.xml

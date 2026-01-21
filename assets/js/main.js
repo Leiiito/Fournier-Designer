@@ -159,6 +159,111 @@
   // - disabled for reduced motion
   // ---------------------------------------------------------------------------
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+
+  // ---------------------------------------------------------------------------
+  // HERO CANVAS ORBS (A) — ultra light, mobile-safe
+  // ---------------------------------------------------------------------------
+  const canvas = qs("#heroCanvas");
+  if (canvas && !prefersReducedMotion) {
+    const ctx = canvas.getContext("2d", { alpha: true });
+    let w = 0, h = 0, dpr = Math.min(2, window.devicePixelRatio || 1);
+    const hero = qs("#hero") || document.body;
+
+    const rand = (a, b) => a + Math.random() * (b - a);
+
+    const palette = [
+      { h: 220, s: 90, l: 60, a: 0.10 }, // bleu
+      { h: 355, s: 85, l: 58, a: 0.08 }, // rouge
+      { h: 210, s: 100, l: 92, a: 0.05 } // blanc/bleuté
+    ];
+
+    const orbs = Array.from({ length: 7 }, () => {
+      const p = palette[Math.floor(Math.random() * palette.length)];
+      return {
+        x: rand(0.15, 0.85),
+        y: rand(0.15, 0.85),
+        r: rand(90, 190),
+        vx: rand(-0.0009, 0.0009),
+        vy: rand(-0.0007, 0.0007),
+        p
+      };
+    });
+
+    const resize = () => {
+      const rect = hero.getBoundingClientRect();
+      w = Math.max(320, rect.width);
+      h = Math.max(280, rect.height);
+      dpr = Math.min(2, window.devicePixelRatio || 1);
+      canvas.width = Math.floor(w * dpr);
+      canvas.height = Math.floor(h * dpr);
+      canvas.style.width = w + "px";
+      canvas.style.height = h + "px";
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    };
+
+    const draw = () => {
+      ctx.clearRect(0, 0, w, h);
+
+      // soft background fade
+      ctx.fillStyle = "rgba(0,0,0,0)";
+      ctx.fillRect(0, 0, w, h);
+
+      for (const o of orbs) {
+        // drift
+        o.x += o.vx;
+        o.y += o.vy;
+        if (o.x < 0.05 || o.x > 0.95) o.vx *= -1;
+        if (o.y < 0.05 || o.y > 0.95) o.vy *= -1;
+
+        const cx = o.x * w;
+        const cy = o.y * h;
+
+        const g = ctx.createRadialGradient(cx, cy, 0, cx, cy, o.r);
+        g.addColorStop(0, `hsla(${o.p.h} ${o.p.s}% ${o.p.l}% / ${o.p.a})`);
+        g.addColorStop(1, "rgba(0,0,0,0)");
+
+        ctx.fillStyle = g;
+        ctx.beginPath();
+        ctx.arc(cx, cy, o.r, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    };
+
+    // Throttle animation when not in view
+    let running = false;
+    let raf = 0;
+
+    const loop = () => {
+      if (!running) return;
+      draw();
+      raf = requestAnimationFrame(loop);
+    };
+
+    const io = new IntersectionObserver((entries) => {
+      const vis = entries.some(e => e.isIntersecting);
+      if (vis && !running) {
+        running = true;
+        loop();
+      } else if (!vis && running) {
+        running = false;
+        cancelAnimationFrame(raf);
+      }
+    }, { threshold: 0.05 });
+
+    resize();
+    io.observe(hero);
+    window.addEventListener("resize", resize, { passive: true });
+
+    // subtle parallax tie-in (optional)
+    window.addEventListener("scroll", () => {
+      // tiny opacity modulation for depth (cheap)
+      const y = window.scrollY || 0;
+      const t = Math.max(0, Math.min(1, 1 - y / 520));
+      canvas.style.opacity = String(0.55 + t * 0.35);
+    }, { passive: true });
+  }
+
   const parallaxEls = qsa("[data-parallax]");
   let ticking = false;
 
