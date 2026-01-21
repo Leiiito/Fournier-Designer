@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fournier-designer.github.io/sitemap.xml

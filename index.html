@@ -1,0 +1,716 @@
+<!doctype html>
+<html lang="fr" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Fournier Designer — Un design qui parle à vos clients</title>
+  <meta name="description" content="Designer web freelance spécialisé en sites one-page premium pour micro-entreprises : design & UX, intégration, animations légères, SEO de base, formulaire et mise en ligne. À partir de 250€." />
+
+  <!-- Canonical (GitHub Pages / domaine à ajuster si besoin) -->
+  <link rel="canonical" href="https://fournier-designer.github.io/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Fournier Designer — Un design qui parle à vos clients" />
+  <meta property="og:description" content="Sites one-page premium pour indépendants & petites entreprises. Design, UX, intégration, SEO de base, animations, formulaire, mise en ligne. À partir de 250€." />
+  <meta property="og:url" content="https://fournier-designer.github.io/" />
+  <meta property="og:image" content="assets/img/og-cover.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Fournier Designer — Un design qui parle à vos clients" />
+  <meta name="twitter:description" content="Sites one-page premium pour indépendants & petites entreprises. À partir de 250€." />
+  <meta name="twitter:image" content="assets/img/og-cover.png" />
+
+  <!-- Favicons -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+
+  <!-- CSS -->
+  <link rel="preload" href="assets/css/style.css" as="style" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- JS -->
+  <link rel="preload" href="assets/js/main.js" as="script" />
+  <script defer src="assets/js/main.js"></script>
+
+  <!-- Schema.org (ProfessionalService) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Fournier Designer",
+    "description": "Designer web freelance spécialisé dans les sites one-page premium pour micro-entreprises (design UX/UI, intégration, animations légères, SEO de base, formulaire, mise en ligne).",
+    "areaServed": "FR",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Gravelines",
+      "addressCountry": "FR"
+    },
+    "email": "fournier-designer@outlook.fr",
+    "url": "https://fournier-designer.github.io/",
+    "sameAs": [
+      "https://www.facebook.com/profile.php?id=61586949930138"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <!-- Skip link (accessibilité) -->
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <!-- Scroll progress (discret) -->
+  <div class="scroll-progress" aria-hidden="true">
+    <span class="scroll-progress__bar" id="scrollProgressBar"></span>
+  </div>
+
+  <!-- Ambient background (orbs + grid) -->
+  <div class="bg" aria-hidden="true">
+    <div class="bg__grid"></div>
+    <div class="bg__orb bg__orb--a"></div>
+    <div class="bg__orb bg__orb--b"></div>
+    <div class="bg__orb bg__orb--c"></div>
+    <div class="bg__noise"></div>
+  </div>
+
+  <!-- Navbar -->
+  <header class="nav" id="top">
+    <div class="container nav__inner">
+      <a class="brand" href="#top" aria-label="Retour en haut — Fournier Designer">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span class="brand__text">Fournier Designer</span>
+      </a>
+
+      <nav class="nav__links" aria-label="Navigation principale">
+        <a href="#services">Ce que je fais</a>
+        <a href="#offre">Offre</a>
+        <a href="#process">Process</a>
+        <a href="#portfolio">Projets</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact" class="nav__cta">Discuter</a>
+      </nav>
+
+      <div class="nav__actions">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Activer le mode clair/sombre" aria-pressed="false">
+          <span class="theme-toggle__icon" aria-hidden="true"></span>
+          <span class="theme-toggle__label">Thème</span>
+        </button>
+
+        <button class="burger" id="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu" hidden>
+      <div class="container mobile-menu__inner">
+        <a href="#services" class="mobile-menu__link">Ce que je fais</a>
+        <a href="#offre" class="mobile-menu__link">Offre</a>
+        <a href="#process" class="mobile-menu__link">Process</a>
+        <a href="#portfolio" class="mobile-menu__link">Projets</a>
+        <a href="#faq" class="mobile-menu__link">FAQ</a>
+        <a href="#contact" class="btn btn--primary btn--full mobile-menu__cta">Discuter de votre projet</a>
+        <a class="mobile-menu__link" href="mailto:fournier-designer@outlook.fr">Email direct</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero section" id="hero">
+      <div class="container hero__inner">
+        <div class="hero__content" data-reveal="up">
+          <p class="kicker">
+            <span class="kicker__dot" aria-hidden="true"></span>
+            Sites one-page premium • Micro-entreprises • France
+          </p>
+
+          <h1>Designer web freelance, clair et efficace</h1>
+
+          <p class="lead">
+            J’aide les indépendants et petites entreprises à créer un site simple, crédible et facile à utiliser — sans superflu.
+          </p>
+
+          <div class="hero__cta">
+            <a href="#contact" class="btn btn--primary magnetic" data-magnetic>
+              👉 Discuter de votre projet
+              <span class="btn__glow" aria-hidden="true"></span>
+            </a>
+            <a href="#process" class="btn btn--ghost">
+              → Voir comment je travaille
+            </a>
+          </div>
+
+          <ul class="hero__badges" aria-label="Points clés">
+            <li class="pill" data-reveal="up" data-reveal-delay="80">À partir de <strong>250€</strong></li>
+            <li class="pill" data-reveal="up" data-reveal-delay="140">Livraison <strong>5–10 jours</strong></li>
+            <li class="pill" data-reveal="up" data-reveal-delay="200"><strong>2</strong> retouches incluses</li>
+          </ul>
+        </div>
+
+                <div class="hero__visual" aria-hidden="true" data-reveal="fade">
+          <div class="logo-hero" data-parallax="0.10">
+            <img src="assets/img/BLOGO.png" alt="Fournier Designer" class="logo-hero__img" />
+            <span class="logo-hero__glow" aria-hidden="true"></span>
+            <span class="logo-hero__scan" aria-hidden="true"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <!-- CONFIANCE / LOGOS (marquee léger) -->
+    <section class="section section--tight" id="confiance" aria-label="Ils me font confiance">
+      <div class="container">
+        <div class="trust" data-reveal="fade">
+          <p class="trust__title">Ils me font confiance</p>
+          <div class="marquee" role="presentation" aria-hidden="true">
+            <div class="marquee__track">
+              <span class="logo-pill">Beauté</span>
+              <span class="logo-pill">Artisans</span>
+              <span class="logo-pill">Coaching</span>
+              <span class="logo-pill">Indépendants</span>
+              <span class="logo-pill">Micro-entreprises</span>
+              <span class="logo-pill">Services</span>
+              <span class="logo-pill">Local</span>
+              <span class="logo-pill">France</span>
+
+              <span class="logo-pill">Beauté</span>
+              <span class="logo-pill">Artisans</span>
+              <span class="logo-pill">Coaching</span>
+              <span class="logo-pill">Indépendants</span>
+              <span class="logo-pill">Micro-entreprises</span>
+              <span class="logo-pill">Services</span>
+              <span class="logo-pill">Local</span>
+              <span class="logo-pill">France</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CE QUE JE FAIS -->
+    <section class="section" id="services">
+      <div class="container">
+        <header class="section__header" data-reveal="up">
+          <h2>Ce que je fais</h2>
+          <p class="section__sub">
+            Des sites vitrines lisibles, rapides et modernes — pensés pour vos clients, pas pour compliquer votre quotidien.
+          </p>
+        </header>
+
+        <div class="grid grid--4">
+          <article class="card card--hover" data-spotlight data-reveal="up">
+            <div class="card__icon" aria-hidden="true"></div>
+            <h3>Sites vitrines pour indépendants</h3>
+            <p>Des sites clairs pour présenter votre activité et inspirer confiance.</p>
+          </article>
+
+          <article class="card card--hover" data-spotlight data-reveal="up" data-reveal-delay="80">
+            <div class="card__icon" aria-hidden="true"></div>
+            <h3>Design & UX</h3>
+            <p>Je structure l’information pour que vos visiteurs comprennent vite.</p>
+          </article>
+
+          <article class="card card--hover" data-spotlight data-reveal="up" data-reveal-delay="140">
+            <div class="card__icon" aria-hidden="true"></div>
+            <h3>Refonte de site existant</h3>
+            <p>On simplifie, on clarifie, on améliore ce qui ne fonctionne plus.</p>
+          </article>
+
+          <article class="card card--hover" data-spotlight data-reveal="up" data-reveal-delay="200">
+            <div class="card__icon" aria-hidden="true"></div>
+            <h3>Accompagnement de A à Z</h3>
+            <p>Un seul interlocuteur, du premier échange à la mise en ligne.</p>
+          </article>
+        </div>
+
+        <div class="split" id="method">
+          <div class="split__left" data-reveal="up">
+            <h3>Ma façon de travailler</h3>
+            <p class="muted">
+              Simple et directe. Je prends le temps de comprendre votre activité avant de dessiner quoi que ce soit.
+            </p>
+
+            <ul class="list">
+              <li><strong>Sans jargon inutile.</strong> Je vous explique chaque décision, avec des mots clairs.</li>
+              <li><strong>Pensé pour durer.</strong> Un site que vous pouvez faire évoluer, pas une vitrine figée.</li>
+              <li><strong>Orienté conversion.</strong> Un parcours fluide, un message net, un CTA qui guide.</li>
+            </ul>
+
+            <div class="inline-cta">
+              <a href="#contact" class="btn btn--primary magnetic" data-magnetic>
+                Recevoir un devis
+                <span class="btn__glow" aria-hidden="true"></span>
+              </a>
+              <a class="btn btn--ghost" href="mailto:fournier-designer@outlook.fr">Écrire un email</a>
+            </div>
+          </div>
+
+          <div class="split__right" data-reveal="fade">
+            <div class="metric-cards" data-parallax="0.10" aria-hidden="true">
+              <div class="metric-card">
+                <div class="metric-card__value">5–10j</div>
+                <div class="metric-card__label">délai moyen</div>
+              </div>
+              <div class="metric-card">
+                <div class="metric-card__value">250€+</div>
+                <div class="metric-card__label">à partir de</div>
+              </div>
+              <div class="metric-card">
+                <div class="metric-card__value">2</div>
+                <div class="metric-card__label">retouches incluses</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OFFRE -->
+    <section class="section" id="offre">
+      <div class="container">
+        <header class="section__header" data-reveal="up">
+          <h2>Offre</h2>
+          <p class="section__sub">Une base claire, un rendu premium, et juste ce qu’il faut d’effets pour donner du relief — sans lourdeur.</p>
+        </header>
+
+        <div class="pricing">
+          <article class="price-card price-card--featured card" data-reveal="up">
+            <div class="price-card__badge" aria-hidden="true">Recommandé</div>
+            <h3>Site vitrine one-page</h3>
+            <p class="price-card__desc muted">Idéal pour lancer (ou relancer) une activité avec un site crédible et efficace.</p>
+
+            <div class="price">
+              <span class="price__from">À partir de</span>
+              <span class="price__value">250€</span>
+            </div>
+
+            <ul class="checks" aria-label="Inclus dans l’offre">
+              <li>Design UX/UI sur-mesure</li>
+              <li>Intégration responsive (mobile-first)</li>
+              <li>Animations légères (scroll reveal, hover premium)</li>
+              <li>SEO de base + structure Hn</li>
+              <li>Formulaire de contact (Formspree)</li>
+              <li>Mise en ligne (GitHub Pages)</li>
+              <li>2 retouches incluses</li>
+            </ul>
+
+            <div class="price-card__cta">
+              <a href="#contact" class="btn btn--primary magnetic" data-magnetic>
+                Démarrer un projet
+                <span class="btn__glow" aria-hidden="true"></span>
+              </a>
+              <a href="#portfolio" class="btn btn--ghost">Voir un exemple</a>
+            </div>
+          </article>
+
+          <div class="pricing__side">
+            <article class="card card--hover" data-spotlight data-reveal="up" data-reveal-delay="90">
+              <h3>Refonte One-Page</h3>
+              <p class="muted">On garde le fond, on améliore la clarté, le design, la crédibilité et la conversion.</p>
+              <p class="muted"><strong>Prix :</strong> sur devis</p>
+            </article>
+
+            <article class="card card--hover" data-spotlight data-reveal="up" data-reveal-delay="140">
+              <h3>Mini-site 3 pages</h3>
+              <p class="muted">Pour présenter plus en détail : Accueil, Services, Contact (ou autre structure simple).</p>
+              <p class="muted"><strong>Prix :</strong> sur devis</p>
+            </article>
+
+            <article class="card card--hover" data-spotlight data-reveal="up" data-reveal-delay="190">
+              <h3>Options</h3>
+              <ul class="list list--compact">
+                <li><strong>Mentions légales / Politique</strong> — sur devis</li>
+                <li><strong>Section avis Google intégrée</strong> — sur devis</li>
+              </ul>
+              <p class="muted">Options simples, propres, et intégrées au design.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="section" id="process">
+      <div class="container">
+        <header class="section__header" data-reveal="up">
+          <h2>Process</h2>
+          <p class="section__sub">Rapide, cadré, et sans flou : vous savez où on va à chaque étape.</p>
+        </header>
+
+        <ol class="steps" aria-label="Étapes du projet">
+          <li class="step" data-reveal="up">
+            <span class="step__num" aria-hidden="true">01</span>
+            <h3>Premier échange</h3>
+            <p>On parle de votre activité, de vos besoins et de vos contraintes.</p>
+          </li>
+          <li class="step" data-reveal="up" data-reveal-delay="90">
+            <span class="step__num" aria-hidden="true">02</span>
+            <h3>Structure du site</h3>
+            <p>Je définis les sections, le contenu et le parcours utilisateur.</p>
+          </li>
+          <li class="step" data-reveal="up" data-reveal-delay="140">
+            <span class="step__num" aria-hidden="true">03</span>
+            <h3>Design</h3>
+            <p>Je crée une interface simple, lisible et cohérente.</p>
+          </li>
+          <li class="step" data-reveal="up" data-reveal-delay="190">
+            <span class="step__num" aria-hidden="true">04</span>
+            <h3>Mise en ligne</h3>
+            <p>Intégration responsive, rapide, prête à être utilisée.</p>
+          </li>
+          <li class="step" data-reveal="up" data-reveal-delay="240">
+            <span class="step__num" aria-hidden="true">05</span>
+            <h3>Ajustements</h3>
+            <p>On affine ensemble avant livraison finale.</p>
+          </li>
+        </ol>
+
+        <div class="forwho" data-reveal="fade">
+          <h3>Pour qui ?</h3>
+          <div class="forwho__pills" aria-label="Types de clients">
+            <span class="pill">Indépendants</span>
+            <span class="pill">Freelances</span>
+            <span class="pill">Petites entreprises</span>
+            <span class="pill">Projets simples et sérieux</span>
+          </div>
+          <p class="muted">
+            (Si vous cherchez une usine à gaz ou une grosse équipe, je ne suis probablement pas le bon choix — et c’est OK.)
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section class="section" id="portfolio">
+      <div class="container">
+        <header class="section__header" data-reveal="up">
+          <h2>Projets</h2>
+          <p class="section__sub">Quelques exemples (réels + placeholders) avec détails en un clic.</p>
+        </header>
+
+        <div class="grid grid--3">
+          <article class="project card card--hover" data-reveal="up">
+            <div class="project__thumb" role="img" aria-label="Aperçu du projet La Main d'Or"></div>
+            <div class="project__body">
+              <h3>La Main d’Or</h3>
+              <p class="muted">Beauté — site one-page</p>
+              <p>Présentation claire de l’activité + prise de contact rapide.</p>
+              <button class="btn btn--ghost project__more"
+                      type="button"
+                      data-modal-open
+                      data-project="main-dor">
+                Voir détails
+              </button>
+            </div>
+          </article>
+
+          <article class="project card card--hover" data-reveal="up" data-reveal-delay="90">
+            <div class="project__thumb project__thumb--placeholder" role="img" aria-label="Aperçu du projet (placeholder)"></div>
+            <div class="project__body">
+              <h3>Studio Éclat (placeholder)</h3>
+              <p class="muted">Coaching — site one-page</p>
+              <p>Une landing simple, orientée prise de rendez-vous.</p>
+              <button class="btn btn--ghost project__more"
+                      type="button"
+                      data-modal-open
+                      data-project="placeholder-1">
+                Voir détails
+              </button>
+            </div>
+          </article>
+
+          <article class="project card card--hover" data-reveal="up" data-reveal-delay="140">
+            <div class="project__thumb project__thumb--placeholder" role="img" aria-label="Aperçu du projet (placeholder)"></div>
+            <div class="project__body">
+              <h3>Atelier Nord (placeholder)</h3>
+              <p class="muted">Artisan — mini-site 3 pages</p>
+              <p>Crédibilité + structure propre pour services et contact.</p>
+              <button class="btn btn--ghost project__more"
+                      type="button"
+                      data-modal-open
+                      data-project="placeholder-2">
+                Voir détails
+              </button>
+            </div>
+          </article>
+        </div>
+
+        <!-- Modal -->
+        <dialog class="modal" id="projectModal" aria-label="Détails du projet">
+          <div class="modal__inner">
+            <button class="modal__close" type="button" data-modal-close aria-label="Fermer">✕</button>
+
+            <div class="modal__content">
+              <div class="modal__media" aria-hidden="true"></div>
+              <div class="modal__text">
+                <p class="modal__kicker" id="modalKicker">Projet</p>
+                <h3 id="modalTitle">Titre</h3>
+                <p class="muted" id="modalMeta">Secteur — format</p>
+                <p id="modalDesc">Description</p>
+
+                <ul class="checks checks--compact" id="modalBullets" aria-label="Ce qui a été fait">
+                  <!-- injecté via JS -->
+                </ul>
+
+                <div class="modal__actions">
+                  <a class="btn btn--primary magnetic" data-magnetic href="#contact">
+                    Lancer un projet
+                    <span class="btn__glow" aria-hidden="true"></span>
+                  </a>
+                  <a class="btn btn--ghost" href="mailto:fournier-designer@outlook.fr">Email direct</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </dialog>
+      </div>
+    </section>
+
+    
+    <!-- ÉTUDE DE CAS (style témoignage / preuve forte) -->
+    <section class="section" id="etude-de-cas">
+      <div class="container">
+        <header class="section__header" data-reveal="up">
+          <h2>Étude de cas</h2>
+          <p class="section__sub">Une preuve concrète, même sans “blabla” : ce que j’ai livré, et pourquoi ça marche.</p>
+        </header>
+
+        <div class="case" data-reveal="fade">
+          <div class="case__left">
+            <p class="case__kicker">Projet réel</p>
+            <h3 class="case__title">La Main d’Or — prothésiste ongulaire</h3>
+            <p class="muted">
+              Objectif : inspirer confiance en quelques secondes et simplifier la prise de contact.
+              Le résultat : une page claire, lisible, avec un style premium et des micro-animations légères.
+            </p>
+
+            <div class="case__stats" aria-label="Points clés du projet">
+              <div class="case-stat">
+                <div class="case-stat__v">One-page</div>
+                <div class="case-stat__l">structure</div>
+              </div>
+              <div class="case-stat">
+                <div class="case-stat__v">Mobile-first</div>
+                <div class="case-stat__l">responsive</div>
+              </div>
+              <div class="case-stat">
+                <div class="case-stat__v">SEO</div>
+                <div class="case-stat__l">base propre</div>
+              </div>
+              <div class="case-stat">
+                <div class="case-stat__v">CTA</div>
+                <div class="case-stat__l">contact clair</div>
+              </div>
+            </div>
+
+            <div class="case__actions">
+              <a href="#contact" class="btn btn--primary magnetic" data-magnetic>
+                Faire pareil pour mon activité
+                <span class="btn__glow" aria-hidden="true"></span>
+              </a>
+              <a href="#portfolio" class="btn btn--ghost">Voir les projets</a>
+            </div>
+          </div>
+
+          <div class="case__right" aria-hidden="true">
+            <div class="case__visual" data-parallax="0.12"></div>
+          </div>
+        </div>
+
+        <div class="case-mini" data-reveal="up">
+          <div class="grid grid--3">
+            <figure class="quote card card--hover">
+              <blockquote>“Avis clients : bientôt.”</blockquote>
+              <figcaption class="muted">Vous pourrez intégrer des avis Google quand vous en aurez.</figcaption>
+            </figure>
+            <figure class="quote card card--hover">
+              <blockquote>“Format prêt.”</blockquote>
+              <figcaption class="muted">Je garde un design propre même avec des placeholders.</figcaption>
+            </figure>
+            <figure class="quote card card--hover">
+              <blockquote>“Conversion d’abord.”</blockquote>
+              <figcaption class="muted">Le but : guider vers un contact simple.</figcaption>
+            </figure>
+          </div>
+
+          <div class="note">
+            <p class="muted">Option disponible : <strong>section avis Google intégrée</strong> (sur devis).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container">
+        <header class="section__header" data-reveal="up">
+          <h2>FAQ</h2>
+          <p class="section__sub">Les questions qu’on se pose souvent avant de lancer un site.</p>
+        </header>
+
+        <div class="faq" data-reveal="fade">
+          <details class="faq__item">
+            <summary>Combien ça coûte ?</summary>
+            <div class="faq__content">
+              <p>Les projets démarrent à <strong>250€</strong>. Le prix exact dépend de vos besoins (contenu, options, refonte ou mini-site).</p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary>Combien de temps ça prend ?</summary>
+            <div class="faq__content">
+              <p>En moyenne, la livraison se fait en <strong>5 à 10 jours</strong> selon votre réactivité et la complexité.</p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary>Je n’ai pas encore tout le contenu</summary>
+            <div class="faq__content">
+              <p>Pas de souci : on structure d’abord, puis on construit le contenu proprement (sans se perdre dans les détails).</p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary>Puis-je modifier mon site ensuite ?</summary>
+            <div class="faq__content">
+              <p>Oui. Le site est propre, lisible et facile à faire évoluer. Je peux aussi proposer une aide ponctuelle si besoin.</p>
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary>Tu travailles seul ?</summary>
+            <div class="faq__content">
+              <p>Oui. Vous parlez toujours à la même personne, du début à la fin.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="container">
+        <header class="section__header" data-reveal="up">
+          <h2>Contact</h2>
+          <p class="section__sub">Expliquez votre besoin. Je vous réponds rapidement par email.</p>
+        </header>
+
+        <div class="contact">
+          <div class="contact__left" data-reveal="up">
+            <div class="card contact-card">
+              <h3>Demande de devis</h3>
+              <p class="muted">Objectif : un site simple, crédible, et agréable à parcourir.</p>
+
+              <!-- Formspree: remplacer ACTION par votre endpoint -->
+              <form class="form" id="contactForm"
+                    action="https://formspree.io/f/xjggdbzk"
+                    method="POST"
+                    data-formspree>
+                <div class="field">
+                  <label for="name">Nom</label>
+                  <input id="name" name="name" type="text" autocomplete="name" required />
+                </div>
+
+                <div class="field">
+                  <label for="email">Email</label>
+                  <input id="email" name="email" type="email" autocomplete="email" required />
+                </div>
+
+                <div class="field">
+                  <label for="activity">Activité</label>
+                  <input id="activity" name="activity" type="text" placeholder="Ex. prothésiste ongulaire, coach…" required />
+                </div>
+
+                <div class="field">
+                  <label for="deadline">Délai souhaité</label>
+                  <input id="deadline" name="deadline" type="text" placeholder="Ex. 10 jours, fin du mois…" />
+                </div>
+
+                <div class="field">
+                  <label for="message">Message</label>
+                  <textarea id="message" name="message" rows="5" placeholder="Objectif, contenu, inspirations…" required></textarea>
+                </div>
+
+                <!-- Anti-spam (honeypot) -->
+                <input type="text" name="_gotcha" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+                <button class="btn btn--primary magnetic" data-magnetic type="submit">
+                  Envoyer
+                  <span class="btn__glow" aria-hidden="true"></span>
+                </button>
+
+                <p class="form__hint muted">
+                  Ou écrivez directement : <a href="mailto:fournier-designer@outlook.fr">fournier-designer@outlook.fr</a>
+                </p>
+
+                <p class="form__success" id="formSuccess" hidden>
+                  Message reçu. Je vous réponds rapidement.
+                </p>
+                <p class="form__error" id="formError" hidden>
+                  Oups — un problème est survenu. Essayez par email.
+                </p>
+              </form>
+            </div>
+          </div>
+
+          <aside class="contact__right" data-reveal="fade">
+            <div class="card card--hover" data-spotlight>
+              <h3>Infos</h3>
+              <ul class="list list--compact">
+                <li><strong>Zone :</strong> France entière</li>
+                <li><strong>Ville :</strong> Gravelines</li>
+                <li><strong>Secteurs :</strong> beauté, artisans, coaching</li>
+              </ul>
+            </div>
+
+            <div class="card card--hover" data-spotlight>
+              <h3>Réseaux</h3>
+              <p class="muted">Vous pouvez aussi me contacter ici :</p>
+              <a class="btn btn--ghost btn--full" href="https://www.facebook.com/profile.php?id=61586949930138" target="_blank" rel="noopener noreferrer">
+                Facebook
+              </a>
+            </div>
+
+            <div class="card card--hover" data-spotlight>
+              <h3>Prochain pas</h3>
+              <p class="muted">Dites-moi ce que vous voulez obtenir (et pour qui), je m’occupe du reste.</p>
+              <a class="btn btn--primary btn--full magnetic" data-magnetic href="#offre">
+                Voir l’offre
+                <span class="btn__glow" aria-hidden="true"></span>
+              </a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <div class="footer__title">Fournier — designer web freelance</div>
+        <p class="muted">Sites clairs pour indépendants et petites entreprises.</p>
+      </div>
+
+      <div class="footer__links" aria-label="Liens">
+        <a href="#services">Services</a>
+        <a href="#offre">Offre</a>
+        <a href="#portfolio">Projets</a>
+        <a href="#contact">Contact</a>
+        <a href="mailto:fournier-designer@outlook.fr">Email</a>
+      </div>
+
+      <div class="footer__legal muted">
+        <span>© <span id="year"></span> Fournier Designer — Gravelines</span>
+        <span class="dotsep" aria-hidden="true">•</span>
+        <a href="#top">Haut de page</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
