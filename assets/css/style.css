@@ -1675,44 +1675,79 @@ html[data-theme="light"] .hero--banner::before{
 .hero--banner .hero__content{ position: relative; z-index: 1; }
 
 
+
+
 /* ============================
-   WATERMARK GLOBAL (logo en fond sur tout le site)
+   HERO BANNIÈRE COMPLÈTE (logo plein écran)
 ============================ */
-.watermark{
-  position: fixed;
-  inset: 0;
-  z-index: -1; /* derrière le contenu mais au-dessus du background */
-  pointer-events: none;
+.hero--banner{
+  min-height: 92vh;
   display: grid;
-  place-items: center;
-  opacity: .08;
-}
-.watermark img{
-  width: min(980px, 120vw);
-  height: auto;
-  filter: drop-shadow(0 40px 120px rgba(0,0,0,.22));
-  transform: translate3d(0,0,0) rotate(-2deg);
+  align-items: center;
+  padding-top: 28px;
+  padding-bottom: 28px;
+  overflow: hidden;
+  position: relative;
 }
 
-/* lisibilité: overlay léger au-dessus du watermark */
-body::after{
-  content:"";
-  position: fixed;
+/* Logo en bannière complète */
+.hero-banner__logo{
+  position: absolute;
   inset: 0;
-  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;              /* IMPORTANT : bannière complète */
+  object-position: 60% 50%;
+  opacity: .22;                   /* Ajustable */
+  filter: saturate(1.05) contrast(1.05) blur(0px);
+  transform: translate3d(0,0,0) scale(1.02);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Overlay pour lisibilité (premium, pas sale) */
+.hero--banner::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:0;
+  background:
+    radial-gradient(900px 560px at 22% 35%, rgba(0,0,0,.62), transparent 62%),
+    radial-gradient(900px 560px at 85% 70%, rgba(0,0,0,.35), transparent 65%),
+    linear-gradient(90deg, rgba(0,0,0,.50), transparent 55%);
   pointer-events:none;
-  background: radial-gradient(900px 620px at 25% 25%, rgba(0,0,0,.28), transparent 70%),
-              radial-gradient(900px 620px at 80% 80%, rgba(0,0,0,.22), transparent 70%);
 }
 
-/* Light mode */
-html[data-theme="light"] .watermark{ opacity: .06; }
-html[data-theme="light"] body::after{
-  background: radial-gradient(900px 620px at 25% 25%, rgba(255,255,255,.55), transparent 70%),
-              radial-gradient(900px 620px at 80% 80%, rgba(255,255,255,.42), transparent 70%);
+html[data-theme="light"] .hero--banner::before{
+  background:
+    radial-gradient(900px 560px at 22% 35%, rgba(255,255,255,.78), transparent 62%),
+    radial-gradient(900px 560px at 85% 70%, rgba(255,255,255,.55), transparent 65%),
+    linear-gradient(90deg, rgba(255,255,255,.70), transparent 55%);
 }
 
-@media (max-width: 540px){
-  .watermark{ opacity: .06; }
-  .watermark img{ width: 140vw; }
+/* Canvas derrière le contenu */
+.hero--banner .hero-canvas{ z-index: 0; }
+
+/* Contenu au-dessus */
+.hero--banner .hero__inner,
+.hero--banner .hero__content{ position: relative; z-index: 1; }
+
+/* Sur mobile : centre + légère baisse d'opacité */
+@media (max-width: 720px){
+  .hero--banner{ min-height: 86vh; }
+  .hero-banner__logo{
+    object-position: 50% 40%;
+    opacity: .18;
+    transform: translate3d(0,0,0) scale(1.10);
+  }
+  .hero--banner::before{
+    background: radial-gradient(820px 560px at 50% 30%, rgba(0,0,0,.62), transparent 70%);
+  }
+  html[data-theme="light"] .hero--banner::before{
+    background: radial-gradient(820px 560px at 50% 30%, rgba(255,255,255,.82), transparent 72%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .hero-banner__logo{ transform: none; }
 }
