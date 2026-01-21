@@ -1673,3 +1673,46 @@ html[data-theme="light"] .hero--banner::before{
 .hero--banner .hero-canvas{ z-index: 0; }
 .hero--banner .hero__inner,
 .hero--banner .hero__content{ position: relative; z-index: 1; }
+
+
+/* ============================
+   WATERMARK GLOBAL (logo en fond sur tout le site)
+============================ */
+.watermark{
+  position: fixed;
+  inset: 0;
+  z-index: -1; /* derrière le contenu mais au-dessus du background */
+  pointer-events: none;
+  display: grid;
+  place-items: center;
+  opacity: .08;
+}
+.watermark img{
+  width: min(980px, 120vw);
+  height: auto;
+  filter: drop-shadow(0 40px 120px rgba(0,0,0,.22));
+  transform: translate3d(0,0,0) rotate(-2deg);
+}
+
+/* lisibilité: overlay léger au-dessus du watermark */
+body::after{
+  content:"";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events:none;
+  background: radial-gradient(900px 620px at 25% 25%, rgba(0,0,0,.28), transparent 70%),
+              radial-gradient(900px 620px at 80% 80%, rgba(0,0,0,.22), transparent 70%);
+}
+
+/* Light mode */
+html[data-theme="light"] .watermark{ opacity: .06; }
+html[data-theme="light"] body::after{
+  background: radial-gradient(900px 620px at 25% 25%, rgba(255,255,255,.55), transparent 70%),
+              radial-gradient(900px 620px at 80% 80%, rgba(255,255,255,.42), transparent 70%);
+}
+
+@media (max-width: 540px){
+  .watermark{ opacity: .06; }
+  .watermark img{ width: 140vw; }
+}
